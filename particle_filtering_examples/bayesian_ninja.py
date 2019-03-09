@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
     plt.title("Position of the quail as a function of time")
     plt.plot(t_range, x, '--gx', label="actual")
-    plt.plot(t_range, x_est, '-ro', label="estimated")
+    plt.plot(t_range, x_est, 'r:o', label="estimated")
     plt.xlabel("Time index")
     plt.ylabel("Position")
     plt.legend()
