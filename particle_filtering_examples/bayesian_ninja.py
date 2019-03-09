@@ -94,7 +94,7 @@ def resample(x, p):
 
     :param x: Position of the particles.
     :param p: Probability of each of the particles.
-    :return: Resampled.
+    :return: Resampled vector.
     """
 
     # Preconditions
@@ -104,7 +104,7 @@ def resample(x, p):
     output = np.zeros(x.shape)
 
     # Determine the number of times each particle should be used
-    n = x.shape[0]
+    n = x.shape[0]  # number of elements in the vector
     s = stats.multinomial.rvs(n, p)
 
     # Walk through each particle
@@ -114,6 +114,10 @@ def resample(x, p):
             output[idx] = x[i]
             idx += 1
 
+    # Postcondition
+    assert x.shape == output.shape
+
+    # Return the resampled vector
     return output
 
 
@@ -177,22 +181,26 @@ if __name__ == '__main__':
         # particle given the actual observation
         p_particles[:, t] = probability_of_observation(z_particles[:, t], z[t], sigma_squared_R)
 
-        # Normalise the probabilities such that the distributions sums to 1
+        # Normalise the probabilities such that the distribution sums to 1
         total = np.sum(p_particles[:, t], axis=0)
         p_particles[:, t] = p_particles[:, t] / total
 
         # Perform re-sampling
         x_particles[:, t] = resample(x_particles[:, t], p_particles[:, t])
 
-        # Get the final estimate
+        # Get the final estimate using the (resampled) particles
         x_est[t] = np.mean(x_particles[:, t], axis=0)
+
+    # Calculate the overall mean squared error
+    mse = np.sum(np.power(x_est - x, 2)) / x.shape[0]
+    print("Mean squared error = %f" % mse)
 
     # Generate a plot
     t_range = list(range(0, t_max))
     for t in range(t_max):
-        plt.plot(np.repeat(t, N), x_particles[:, t], 'b.')
+        plt.plot(np.repeat(t, N), x_particles[:, t], 'b.', alpha=0.2)
 
-    plt.plot(t_range, x, '--go', label="actual")
+    plt.plot(t_range, x, '--gx', label="actual")
     plt.plot(t_range, x_est, '-ro', label="estimated")
     plt.xlabel("Time index")
     plt.ylabel("Position")
