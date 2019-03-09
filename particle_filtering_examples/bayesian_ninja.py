@@ -6,9 +6,8 @@
 # A run-through of the Matlab code is here: https://www.youtube.com/watch?v=HZvF8KlFoWk
 #
 # Ninjas use a particle filter to try to chase the quail.
-#
-# Quail: Non-linear flight model (with imprecise measurements)
-# 1-D model, discrete time steps
+# Quail have a non-linear flight model (with imprecise measurements).
+# 1-D model, discrete time steps.
 
 import matplotlib.pyplot as plt
 import numpy as np
