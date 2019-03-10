@@ -200,7 +200,7 @@ if __name__ == '__main__':
         plt.plot(np.repeat(t, N), x_particles[:, t], 'b.', alpha=0.2)
 
     plt.title("Position of the quail as a function of time")
-    plt.plot(t_range, x, '--go', label="actual")
+    plt.plot(t_range, x, '--ro', label="actual")
     plt.plot(t_range, x_est, 'b:x', label="estimated")
     plt.xlabel("Time index")
     plt.ylabel("Position")
