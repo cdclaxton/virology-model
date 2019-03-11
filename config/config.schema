@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "paths": {
+            "type": "object",
+            "properties": {
+                "individuals": {
+                    "type": "string"
+                },
+                "locations": {
+                    "type": "string"
+                },
+                "infections": {
+                    "type": "string"
+                }
+            },
+            "required": ["individuals", "infections", "locations"]
+        }
+    },
+    "required": ["paths"]
+}
