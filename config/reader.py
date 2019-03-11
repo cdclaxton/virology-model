@@ -7,7 +7,7 @@ from logger import logger
 from jsonschema import validate, ValidationError
 
 logger.initialise_logger("config-reader", log_level=logging.INFO)
-module_logger = logging.getLogger('config-readere')
+module_logger = logging.getLogger('config-reader')
 
 
 def load_schema(filepath="./config/config.schema"):
