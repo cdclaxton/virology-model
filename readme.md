@@ -16,7 +16,19 @@ in the code.
     
 ### Individuals
 
+The Individuals folder contains a file per time step of the form `individual_xxxx.csv` where `xxxx` is a number, e.g.
+`individuals_0056.csv`.
 
+Each CSV file must contain the individual's identifier (`individual_id`), their name (`name`), date of birth (`dob`),
+date of death (`dod`), caused by the infection or otherwise, and any required attributes.
+
+| individual_id | name           | dob        | dod         | height | weight |
+|---------------|----------------|------------|-------------|--------|--------|
+| 0001          | Stan Smith     | 01/03/1970 | None        | 178    | 72     |
+| 0002          | Francine Smith | 26/04/1973 | None        | 167    | 66     |
+| 0003          | Klaus Heissler | 25/08/2010 | 14/02/2017  | 4      | 0.1    |
+
+The date must be in the UK format of DD/MM/YYYY. For an individual who is alive, set their `dod` to `None`.
 
 ### Infections    
 
@@ -39,7 +51,7 @@ previous state. If they have not been seen before, then they are assumed not to 
 The Locations data contains a complete list of all geographic locations over all time steps. An example of the 
 structure of the data is:
 
-| identifier | name    |
+| location_id | name    |
 |------------|---------|
 | s1         | Germany |
 | s2         | France  |
