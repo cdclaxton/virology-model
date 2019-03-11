@@ -2,7 +2,12 @@ import logging
 
 
 def initialise_logger(logger_name, log_level=logging.INFO):
-    """Initialise the logger."""
+    """
+    Initialise the console and file logger for the project.
+
+    :param logger_name: Name of the logger.
+    :param log_level: Logging level.
+    """
 
     # Create a logger for the application
     logger = logging.getLogger(logger_name)
