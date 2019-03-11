@@ -46,7 +46,7 @@ def read_json_config(path):
         with open(path, 'r') as fp:
             config = json.load(fp)
     except JSONDecodeError:
-        module_logger.error("Unable to read file: %s" % path)
+        module_logger.error("Unable to parse file: %s" % path)
         config = {}
 
     # Postconditions
