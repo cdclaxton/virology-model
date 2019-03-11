@@ -27,8 +27,9 @@ Each CSV file must be of the form:
 
 | individual_id | infected |
 |---------------|----------|
-| 1267e         | True     |
-| 7273f         | False    |
+| 1267          | True     |
+| 7273          | False    |
+| 9837          | True     |
 
 If an individual does not appear in the file, but they are known by the system, they are assumed to have their 
 previous state. If they have not been seen before, then they are assumed not to be infected.
@@ -42,6 +43,7 @@ structure of the data is:
 |------------|---------|
 | s1         | Germany |
 | s2         | France  |
+| s3         | Italy   |
 
 Note that the identifier must be unique as this is used by the Individuals data.
 
