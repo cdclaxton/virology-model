@@ -46,10 +46,12 @@ The date must be in the UK format of DD/MM/YYYY. For an individual who is alive,
 
 It is expected that the attributes will update over time. At each time step, only the latest attributes are retained.
 
+The converters to parse the attributes are specified in the JSON configuration file.
+
 ### Infections    
 
 The Infections folder contains a file per time step of the form `infection_xxxx.csv` where `xxxx` is a number, e.g.
-`infection_0132.csv`.
+`infection_0132.csv`. The individual ID and infection strain are both treated as strings.
 
 Each CSV file must be of the form:
 
@@ -65,7 +67,8 @@ previous state. If they have not been seen before, then they are assumed not to 
 ### Timestep names
 
 For plotting and logging purposes, a more meaningful name can be associated with each timestep. A CSV file is used
-to hold the `timestep` (e.g. `00001`) and a name (e.g. `March 2019`).
+to hold the `timestep` (e.g. `2`) and a name (e.g. `May 2019`). Note that the timestep is treated as an integer and 
+the name is a string.
 
 An example of the file is:
 
@@ -75,7 +78,7 @@ An example of the file is:
 | 1        | April 2019 |
 | 2        | May 2019   |
 
-Note that if a timestep does not have associated name, the index will simply be used instead.
+Note that if a timestep does not have associated name, the index will simply be used instead for plotting and logging.
 
 ## Particle filter examples
 
