@@ -9,7 +9,7 @@ The purpose of the sub-populations aspect is to restrict the complexity of the m
 that the sub-population to which an individual belongs is known. Some of the attributes of an individual are used by 
 the model to determine the probability of transmission of an infection. 
 
-## Configuration
+## Configuration and input data
 
 The configuration for reading the data and running the inference engine is expressed in a JSON file. This enables
 the software to be run against different data sets more quickly than if the configuration was stored as parameters
