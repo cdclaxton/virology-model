@@ -78,6 +78,9 @@ class Individuals(object):
 
         module_logger.info("Updating the individuals at timestep %d from file: %s" % (timestep, filepath))
 
+        # Update the timestep to which the data corresponds
+        self.timestep = timestep
+
         # Open the CSV file for reading
         reader = DelimitedSource(filepath=filepath,
                                  delimiter=delimiter,

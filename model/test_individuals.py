@@ -49,6 +49,8 @@ def test_update_from_file_1():
         'id-1': {'name': 'Chris', 'age': '21'},
         'id-2': {'name': 'Dave', 'age': '29'}}
 
+    assert individuals.timestep == 1
+
 
 def test_update_from_file_2():
     filepath = "./model/test_data/individuals_1.csv"
@@ -62,3 +64,5 @@ def test_update_from_file_2():
     assert individuals.individual_to_attributes == {
         'id-1': {'name': 'Chris', 'age': 21},
         'id-2': {'name': 'Dave', 'age': 29}}
+
+    assert individuals.timestep == 1

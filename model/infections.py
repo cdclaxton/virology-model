@@ -40,6 +40,10 @@ class Infections(object):
         # Preconditions
         assert infection_strain is None or type(infection_strain) == str
 
+        # If the individual hasn't been seen before, add a log message
+        if not individual_id in self.individual_to_infection.keys():
+            module_logger.info("Adding individual %s" % individual_id)
+
         # Update the individual's infection details
         self.individual_to_infection[individual_id] = infection_strain
 
@@ -62,6 +66,9 @@ class Infections(object):
         assert type(encoding) == str
 
         module_logger.info("Updating the infections at timestep %d from file: %s" % (timestep, filepath))
+
+        # Update the timestep to which the data corresponds
+        self.timestep = timestep
 
         # Open the CSV file for reading
         reader = DelimitedSource(filepath=filepath,
