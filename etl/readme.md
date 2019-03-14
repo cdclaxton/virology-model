@@ -1,3 +1,3 @@
 # ETL
 
-This module contains code to read the individuals and their attributes from a serialised format.
+This module contains code to read the input data from their serialised format.

@@ -2,6 +2,10 @@
   "paths": {
     "individuals": "./data/simple/input/individuals",
     "infections": "./data/simple/input/infections",
-    "locations": "./data/simple/input/locations.csv"
+    "timestep_names": "./data/simple/timestep_names.csv"
+  },
+  "individuals": {
+    "dob": {"type": "date"},
+    "dod": {"type": "date"}
   }
 }

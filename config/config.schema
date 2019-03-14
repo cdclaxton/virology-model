@@ -12,12 +12,12 @@
                     "type": "string",
                     "minLength": 2
                 },
-                "infections": {
+                "timestep_names": {
                     "type": "string",
                     "minLength": 2
                 }
             },
-            "required": ["individuals", "infections", "locations"]
+            "required": ["individuals", "infections", "timestep_names"]
         }
     },
     "required": ["paths"]

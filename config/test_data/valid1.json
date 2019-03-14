@@ -2,6 +2,6 @@
   "paths": {
     "individuals": "./data/simple/input/individuals",
     "infections": "./data/simple/input/infections",
-    "locations": "./data/simple/input/locations"
+    "timestep_names": "./data/simple/input/timestep.csv"
   }
 }
